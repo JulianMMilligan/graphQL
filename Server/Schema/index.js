@@ -6,6 +6,11 @@ const UserType = require("./Types/UserTypes")
 
 const userData = require("../MOCK_DATA.json");  //goes back one folder
 
+
+
+//creates the queries
+
+//read all users
 const RootQuery = new GraphQLObjectType({
     name: "RootQueryType",
     fields:{
@@ -18,6 +23,9 @@ const RootQuery = new GraphQLObjectType({
         }
     }
 });
+
+
+//Add new user
 const Mutation  = new GraphQLObjectType({
     name: "mutations",
     fields:{
@@ -38,4 +46,5 @@ const Mutation  = new GraphQLObjectType({
     }
 });
 
+//exports the schema when require is called 
 module.exports = new GraphQLSchema ({query: RootQuery, mutation : Mutation})
